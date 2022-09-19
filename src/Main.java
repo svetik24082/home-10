@@ -28,7 +28,7 @@ public class Main {
 
 
     public static void main(String[] args) {
-        System.out.println(" Задание 1 ");
+        System.out.println(" Задание -1 ");
         int year = 2030;
         if (year % 4 == 0 && year % 100 != 0 || year % 400 == 0) {
             leapYear(year);
