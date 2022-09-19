@@ -37,7 +37,7 @@ public class Main {
         }
 
 
-        System.out.println(" Задание 2 ");
+        System.out.println(" Задание - 2 ");
         int clientOS = 1;
         int clientDeviceYear = 2014;
         if (clientDeviceYear < 2015 && clientOS == 0) {
