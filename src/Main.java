@@ -1,25 +1,26 @@
 public class Main {
-    public static void knowLeapYear(int year) {
-        System.out.println(year + " -  високосный год");
-    }
-    public static void getDeviceLink(int clientOS, int clientDeviceYear) {
-    }
-    public static int itWillTakeDays(int time) {
-        System.out.println(" На доставку потребуется дней  - " + time);
-        return time;
-    }
+
     public static void main(String[] args) {
+        knowLeapYear(2020);
+        getDeviceLink(1, 2005);
+        int deliveryDays = calculateDeliveryDays(90);
+        System.out.println(" На доставку потребуется дней  - " + deliveryDays);
+
+    }
+
+    public static void knowLeapYear(int year) {
         System.out.println(" Задание 1 ");
-        int year = 2020;
         if (year % 4 == 0 && year % 100 != 0 || year % 400 == 0) {
-            knowLeapYear(year);
+            System.out.println(year + " високосный год ");
+
         } else {
             System.out.println(year + " - Невисокосный год");
         }
+    }
 
-        System.out.println(" Задание  2 ");
-        int clientOS = 1;
-        int clientDeviceYear = 2020;
+    public static void getDeviceLink(int clientOS, int clientDeviceYear) {
+        System.out.println(" Задание 2 ");
+
         if (clientDeviceYear < 2015 && clientOS == 0) {
             System.out.println(" Установите облегченную версию для IOS");
 
@@ -27,40 +28,19 @@ public class Main {
             System.out.println(" Установите облегченную версию для Андроид");
         } else {
             System.out.println(" Можете скачать приложение ");
-            ;
         }
+    }
+    public static int calculateDeliveryDays(int deliveryDistance) {
+
         System.out.println(" Задание 3 ");
 
-        int distance = 95;
-        if (distance < 0) {
-            System.out.println(" не правильно указано расстояние " + distance);
-            return;
+        if (deliveryDistance < 0) {
+            System.out.println(" не правильно указано расстояние " + deliveryDistance);
+            return 1;
+        } else if (deliveryDistance <= 20) {
+            return 2;
+        } else {
+            return (int) Math.round((double) deliveryDistance / 48) + 1;
         }
-        int time = 0;
-        for (int i = 0; i < distance; i += 40) {
-            time = time + 1;
-        }
-        itWillTakeDays(time);
     }
 }
-
-
-
-
-
-
-
-
-
-
-        
-
-
-
-
-
-
-
-
-
-
